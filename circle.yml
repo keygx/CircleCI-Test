@@ -3,4 +3,4 @@ machine:
     XCODE_SCHEME: CircleCI-Test
 test:
   override:
-    - xcodebuild test -scheme CircleCI-Test -project CircleCI-Test -destination 'name=iPhone 6'
+    - xcodebuild test -scheme 'CircleCI-Test' -project 'CircleCI-Test.xcodeproj' -destination 'name=iPhone 6'
