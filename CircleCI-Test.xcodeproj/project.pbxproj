@@ -160,6 +160,7 @@
 		3651D9381B95558800FFF484 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = keygx;
 				TargetAttributes = {
