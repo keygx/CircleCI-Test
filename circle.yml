@@ -1,0 +1,6 @@
+machine:
+  environment:
+    XCODE_SCHEME: CircleCI-Test
+test:
+  override:
+    - xcodebuild test -scheme CircleCI-Test -project CircleCI-Test -sdk iphoneos8.0
