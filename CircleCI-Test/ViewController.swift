@@ -24,4 +24,3 @@ class ViewController: UIViewController {
         return a + b
     }
 }
-
