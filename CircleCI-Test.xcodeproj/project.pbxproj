@@ -13,7 +13,6 @@
 		3651D94D1B95558800FFF484 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3651D94C1B95558800FFF484 /* Images.xcassets */; };
 		3651D9501B95558800FFF484 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3651D94E1B95558800FFF484 /* LaunchScreen.xib */; };
 		3651D95C1B95558800FFF484 /* CircleCI_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651D95B1B95558800FFF484 /* CircleCI_TestTests.swift */; };
-		3651D9681B9557DB00FFF484 /* PAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651D9671B9557DB00FFF484 /* PAssert.swift */; };
 		3651D9691B9558BE00FFF484 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651D9471B95558800FFF484 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		3651D9551B95558800FFF484 /* CircleCI-TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CircleCI-TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3651D95A1B95558800FFF484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3651D95B1B95558800FFF484 /* CircleCI_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCI_TestTests.swift; sourceTree = "<group>"; };
-		3651D9671B9557DB00FFF484 /* PAssert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAssert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +101,6 @@
 			children = (
 				3651D95B1B95558800FFF484 /* CircleCI_TestTests.swift */,
 				3651D9591B95558800FFF484 /* Supporting Files */,
-				3651D9671B9557DB00FFF484 /* PAssert.swift */,
 			);
 			path = "CircleCI-TestTests";
 			sourceTree = "<group>";
@@ -227,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3651D9691B9558BE00FFF484 /* ViewController.swift in Sources */,
-				3651D9681B9557DB00FFF484 /* PAssert.swift in Sources */,
 				3651D95C1B95558800FFF484 /* CircleCI_TestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
