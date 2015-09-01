@@ -21,7 +21,7 @@ class CircleCI_TestTests: XCTestCase {
     
     func testAdd() {
         let vc = ViewController()
-        //PAssert(vc.add(1, 1), ==, 2)
-        XCTAssertEqual(vc.add(1, 1), 2, "1+1=2")
+        PAssert(vc.add(1, 1), ==, 2)
+        //XCTAssertEqual(vc.add(1, 1), 2, "1+1=2")
     }
 }
