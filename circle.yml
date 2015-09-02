@@ -1,8 +1,20 @@
+dependencies:
+  pre:
+    - sudo gem install shenzhen
+
 machine:
   xcode:
     version: "6.4"
   environment:
     XCODE_SCHEME: CircleCI-Test
+
 test:
   override:
     - xcodebuild -project CircleCI-Test.xcodeproj -scheme CircleCI-Test -destination 'name=iPhone 6' test
+
+deployment:
+  deploygate:
+    branch: master
+    commands:
+      - ipa build --clean -s AdHoc
+      - ipa distribute:deploygate -m "circleci build" --api_token $DEPLOYGATE_API_TOKEN --user_name $DEPLOYGATE_USERNAME
