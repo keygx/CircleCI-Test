@@ -1,19 +1,22 @@
 #!/bin/sh
 
 # APPLE_AUTHORITY_BASE64=
-# DISTRIBUTION_KEY_BASE64
 # DISTRIBUTION_CERTIFICATE_BASE64
+# DISTRIBUTION_KEY_BASE64
 # P12_PASSPHRASE=
 
-DIR=tmp/certs
+DIR='./certs'
 KEYCHAIN_NAME='~/Library/Keychains/ios-build.keychain'
 KEYCHAIN_PASSWORD=`openssl rand -base64 48`
 PROFILE_NAME=AdHocTest
+
 rm -rf $DIR
 mkdir -p $DIR
+
 echo ${APPLE_AUTHORITY_BASE64} | base64 -D > ${DIR}/apple.cer
-echo ${DISTRIBUTION_KEY_BASE64} | base64 -D > ${DIR}/dist.p12
 echo ${DISTRIBUTION_CERTIFICATE_BASE64} | base64 -D > ${DIR}/dist.cer
+echo ${DISTRIBUTION_KEY_BASE64} | base64 -D > ${DIR}/dist.p12
+
 security create-keychain -p ${KEYCHAIN_PASSWORD} ios-build.keychain
 security import ${DIR}/apple.cer -k ${KEYCHAIN_NAME} -T /usr/bin/codesign
 security import ${DIR}/dist.cer -k ${KEYCHAIN_NAME} -T /usr/bin/codesign
