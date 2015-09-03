@@ -8,6 +8,7 @@
 DIR=tmp/certs
 KEYCHAIN_NAME='~/Library/Keychains/ios-build.keychain'
 KEYCHAIN_PASSWORD=`openssl rand -base64 48`
+PROFILE_NAME=AdHocTest
 rm -rf $DIR
 mkdir -p $DIR
 echo ${APPLE_AUTHORITY_BASE64} | base64 -D > ${DIR}/apple.cer
@@ -22,4 +23,4 @@ security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_NAME}
 rm -rf $DIR
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp ./scripts/*.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+cp ./scripts/${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
