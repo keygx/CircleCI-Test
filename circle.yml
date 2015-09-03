@@ -12,8 +12,8 @@ deployment:
   deploygate:
     branch: master
     commands:
-      - ./scripts/profile.sh
+      - ios profiles:download AdHocTest --type distribution -u ${ITUNES_CONNECT_ID} -p ${ITUNES_CONNECT_PW}
       - ./scripts/add-key.sh
       - ipa build --clean -s AdHoc
       - ./scripts/remove-key.sh
-      - ./scripts/deploygate.sh
+      - ipa distribute:deploygate -m --api_token ${DEPLOYGATE_API_TOKEN} --user_name ${DEPLOYGATE_USERNAME}
