@@ -23,4 +23,4 @@ security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_NAME}
 rm -rf $DIR
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp ./${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
+cp ${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
