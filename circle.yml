@@ -1,18 +1,18 @@
 machine:
-    xcode:
-        version: '6.4'
-        environment:
-            XCODE_SCHEME: CircleCI-Test
+  xcode:
+    version: '6.4'
+  environment:
+    XCODE_SCHEME: CircleCI-Test
 
 test:
-    override:
-        - xcodebuild -project CircleCI-Test.xcodeproj -scheme CircleCI-Test -destination 'name=iPhone 6' clean test
+  override:
+    - xcodebuild -project CircleCI-Test.xcodeproj -scheme CircleCI-Test -destination 'name=iPhone 6' clean test
 
 deployment:
-    deploygate:
-        branch: master
-        commands:
-            - ./scripts/add-key.sh
-            - ipa build --clean -s AdHoc
-            - ./scripts/remove-key.sh
-            - ./scripts/deploygate.sh
+  deploygate:
+    branch: master
+    commands:
+      - ./scripts/add-key.sh
+      - ipa build --clean -s AdHoc
+      - ./scripts/remove-key.sh
+      - ./scripts/deploygate.sh
