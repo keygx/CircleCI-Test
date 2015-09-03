@@ -1,16 +1,16 @@
 dependencies:
   pre:
     - gem install cupertino
-        timeout: 300
+      timeout: 300
     - gem install shenzhen
-        timeout: 300
+      timeout: 300
 
 dependencies:
   override:
     - gem install cupertino
-        timeout: 300
+      timeout: 300
     - gem install shenzhen
-        timeout: 300
+      timeout: 300
 
 machine:
   xcode:
