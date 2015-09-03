@@ -5,6 +5,7 @@
 # DISTRIBUTION_KEY_BASE64
 # P12_PASSPHRASE=
 
+
 DIR='./certs'
 KEYCHAIN_NAME='~/Library/Keychains/ios-build.keychain'
 KEYCHAIN_PASSWORD=circleci_pw
@@ -13,9 +14,17 @@ PROFILE_NAME=AdHocTest
 rm -rf $DIR
 mkdir -p $DIR
 
-echo ${APPLE_AUTHORITY_BASE64} | base64 -D >> ${DIR}/apple.cer
-echo ${DISTRIBUTION_CERTIFICATE_BASE64} | base64 -D >> ${DIR}/dist.cer
-echo ${DISTRIBUTION_KEY_BASE64} | base64 -D >> ${DIR}/dist.p12
+#echo ${APPLE_AUTHORITY_BASE64} | base64 -D >> ${DIR}/apple.cer
+#echo ${DISTRIBUTION_CERTIFICATE_BASE64} | base64 -D >> ${DIR}/dist.cer
+#echo ${DISTRIBUTION_KEY_BASE64} | base64 -D >> ${DIR}/dist.p12
+
+# APPLE_AUTHORITY_URL=
+# DISTRIBUTION_CERTIFICATE_URL
+# DISTRIBUTION_KEY_URL
+
+curl -k ${APPLE_AUTHORITY_URL} -o ${DIR}/apple.cer
+curl -k ${DISTRIBUTION_CERTIFICATE_URL} -o ${DIR}/dist.cer
+curl -k ${DISTRIBUTION_KEY_URL} -o ${DIR}/dist.p12
 
 security create-keychain -p ${KEYCHAIN_PASSWORD} ios-build.keychain
 security import ${DIR}/apple.cer -k ${KEYCHAIN_NAME} -T /usr/bin/codesign
