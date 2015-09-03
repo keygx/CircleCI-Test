@@ -5,4 +5,4 @@
 
 PROFILE_NAME=AdHocTest
 
-bundle exec ios profiles:download ${PROFILE_NAME} --type distribution -u ${ITUNES_CONNECT_ID} -p ${ITUNES_CONNECT_PW}
+ios profiles:download ${PROFILE_NAME} --type distribution -u ${ITUNES_CONNECT_ID} -p ${ITUNES_CONNECT_PW}

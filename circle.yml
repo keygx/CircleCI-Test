@@ -1,3 +1,8 @@
+dependencies:
+  pre:
+    - sudo gem install cupertino
+    - sudo gem install shenzhen
+
 machine:
   xcode:
     version: '6.4'
@@ -12,8 +17,8 @@ deployment:
   deploygate:
     branch: master
     commands:
-      - ios profiles:download AdHocTest --type distribution -u ${ITUNES_CONNECT_ID} -p ${ITUNES_CONNECT_PW}
+      - ./scripts/profile.sh
       - ./scripts/add-key.sh
-      - ipa build --clean -s AdHoc
+      - ./scripts/build.sh
       - ./scripts/remove-key.sh
-      - ipa distribute:deploygate -m --api_token ${DEPLOYGATE_API_TOKEN} --user_name ${DEPLOYGATE_USERNAME}
+      - ./scripts/deploygate.sh
