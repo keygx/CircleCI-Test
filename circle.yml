@@ -12,6 +12,7 @@ deployment:
   deploygate:
     branch: master
     commands:
+      - ./scripts/profile.sh
       - ./scripts/add-key.sh
       - ipa build --clean -s AdHoc
       - ./scripts/remove-key.sh
