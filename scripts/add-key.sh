@@ -8,7 +8,7 @@
 
 DIR='./certs'
 KEYCHAIN_PATH='~/Library/Keychains/ios-build.keychain'
-# KEYCHAIN_PASSWORD=circleci_pw
+KEYCHAIN_PASSWORD=circle
 PROFILE_NAME=AdHocTest
 
 rm -rf $DIR
@@ -26,7 +26,7 @@ curl -k ${APPLE_AUTHORITY_URL} -o ${DIR}/apple.cer
 curl -k ${DISTRIBUTION_CERTIFICATE_URL} -o ${DIR}/dist.cer
 curl -k ${DISTRIBUTION_KEY_URL} -o ${DIR}/dist.p12
 
-security create-keychain -p ${KEYCHAIN_PASSWORD} ios-build.keychain
+security create-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security import ${DIR}/apple.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
 security import ${DIR}/dist.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
