@@ -30,9 +30,10 @@ security create-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security import ${DIR}/apple.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
 security import ${DIR}/dist.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
-security import ${DIR}/dist.p12 -k ${KEYCHAIN_PATH} -T /usr/bin/codesign -P ${P12_PASSPHRASE}
+security import ${DIR}/dist.p12 -k ${KEYCHAIN_PATH} -P ${P12_PASSPHRASE} -T /usr/bin/codesign
 # security list-keychain -s ${KEYCHAIN_PATH}
 # security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
+security default-keychain -s ${KEYCHAIN_PATH}
 rm -rf $DIR
 
 mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
