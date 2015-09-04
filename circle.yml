@@ -1,9 +1,9 @@
 dependencies:
   override:
     - sudo gem install cupertino -v 1.3.2
-    # - sudo gem install shenzhen #-v 0.13.2
-    # - sudo gem update highline #-v 1.7.2
-    - sudo gem install dgate
+    - sudo gem install shenzhen #-v 0.13.2
+    - sudo gem install highline -v 1.7.2
+    # - sudo gem install dgate
 
 machine:
   xcode:
