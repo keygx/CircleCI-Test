@@ -36,5 +36,5 @@ security import ${DIR}/dist.p12 -k ${KEYCHAIN_PATH} -P ${P12_PASSPHRASE} -T /usr
 security default-keychain -s ${KEYCHAIN_PATH}
 rm -rf $DIR
 
-mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-cp ${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
+# mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+# cp ${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
