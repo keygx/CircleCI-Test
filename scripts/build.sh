@@ -10,7 +10,7 @@ DIR=$PWD/certs
 
 xcodebuild clean -project ${PROJECT_NAME} -scheme AdHoc
 xcodebuild -project "${PROJECT_NAME}.xcodeproj" -sdk 'iphoneos' -target ${PROJECT_NAME} -scheme AdHoc install DSTROOT="${PWD}"
-xcrun -sdk 'iphoneos' PackageApplication "${DIR}/Applications/${PROJECT_NAME}.app" -o "${DIR}/CircleCI-Test.ipa" -embed "~/Library/MobileDevice/Provisioning Profiles/${MOBILEPROVISION_NAME}.mobileprovision"
+xcrun -sdk 'iphoneos' PackageApplication "${DIR}/Applications/${PROJECT_NAME}.app" -o "${DIR}/CircleCI-Test.ipa" -embed "~/${MOBILEPROVISION_NAME}.mobileprovision"
 rm -rf "${DIR}/Applications"
 rm -rf "${DIR}/build"
 
