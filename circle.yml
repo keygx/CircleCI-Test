@@ -10,7 +10,6 @@ machine:
     version: '6.4'
   environment:
     XCODE_SCHEME: CircleCI-Test
-    DEVELOPER_NAME: "iPhone Distribution: Yukihiko Kagiyama (3CCNMX7TC9)"
 
 test:
   override:
