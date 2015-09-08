@@ -6,7 +6,7 @@
 # P12_PASSPHRASE=
 
 
-DIR='./certs'
+DIR=$PWD/certs
 KEYCHAIN_PATH='~/Library/Keychains/ios-build.keychain'
 KEYCHAIN_PASSWORD=circle
 PROFILE_NAME=AdHocTest
@@ -27,14 +27,12 @@ curl -k ${DISTRIBUTION_CERTIFICATE_URL} -o ${DIR}/dist.cer
 curl -k ${DISTRIBUTION_KEY_URL} -o ${DIR}/dist.p12
 
 security create-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
-security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security import ${DIR}/apple.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
 security import ${DIR}/dist.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
 security import ${DIR}/dist.p12 -k ${KEYCHAIN_PATH} -P ${P12_PASSPHRASE} -T /usr/bin/codesign
-# security list-keychain -s ${KEYCHAIN_PATH}
-# security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
+security list-keychain -s ${KEYCHAIN_PATH}
 security default-keychain -s ${KEYCHAIN_PATH}
-rm -rf $DIR
+security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 
 # mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 # cp ${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
