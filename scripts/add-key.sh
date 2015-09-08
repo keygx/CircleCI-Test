@@ -34,5 +34,7 @@ security list-keychain -s ${KEYCHAIN_PATH}
 security default-keychain -s ${KEYCHAIN_PATH}
 security unlock-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 
+security find-identity -v -p codesigning
+
 # mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 # cp ${PROFILE_NAME}.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/${PROFILE_NAME}.mobileprovision
