@@ -24,7 +24,7 @@ mkdir -p $DIR
 
 curl -k ${APPLE_AUTHORITY_URL} -o ${DIR}/apple.cer
 curl -k ${DISTRIBUTION_CERTIFICATE_URL} -o ${DIR}/dist.cer
-curl -k ${DISTRIBUTION_KEY_URL} -o ${DIR}/dist.p12
+curl -k ${DISTRIBUTION_P12_URL} -o ${DIR}/dist.p12
 
 security create-keychain -p ${KEYCHAIN_PASSWORD} ${KEYCHAIN_PATH}
 security import ${DIR}/apple.cer -k ${KEYCHAIN_PATH} -T /usr/bin/codesign
