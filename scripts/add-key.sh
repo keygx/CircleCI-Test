@@ -7,7 +7,7 @@
 
 
 DIR=$PWD/certs
-KEYCHAIN_PATH='~/Library/Keychains/ios-build.keychain'
+KEYCHAIN_PATH=$HOME/Library/Keychains/ios-build.keychain
 KEYCHAIN_PASSWORD=circle
 PROFILE_NAME=AdHocTest
 
